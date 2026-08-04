@@ -1,10 +1,11 @@
 import express from "express";
+import { env } from "./config/env.js";
 
 // Initialize Express application
 const app = express();
 
 // Define server port
-const port = 4000;
+const port = env.PORT;
 
 // Start the server
 app.listen(port, () => {
