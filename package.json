@@ -4,7 +4,7 @@
 	"description": "A production-ready Node.js and Express.js starter kit.",
 	"main": "server.js",
 	"scripts": {
-		"dev": "node server.js"
+		"dev": "nodemon server.js"
 	},
 	"repository": {
 		"type": "git",
@@ -37,6 +37,7 @@
 	"dependencies": {
 		"dotenv": "^17.4.2",
 		"express": "^5.2.1",
+		"nodemon": "^3.1.14",
 		"zod": "^4.4.3"
 	}
 }
