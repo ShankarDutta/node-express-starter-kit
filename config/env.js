@@ -15,12 +15,14 @@ const envSchema = z.object({
 	MONGODB_URI: z.url({
 		error: "MONGODB_URI must be a valid MongoDB connection string",
 	}),
+	NODE_ENV: z.enum(["production", "development"]),
 });
 
 const envVars = {
 	PORT: process.env.PORT,
 	CLIENT_URL: process.env.CLIENT_URL,
 	MONGODB_URI: process.env.MONGODB_URI,
+	NODE_ENV: process.env.NODE_ENV,
 };
 
 export const env = envSchema.parse(envVars);
