@@ -12,11 +12,15 @@ const clientUrlSchema =
 const envSchema = z.object({
 	PORT: z.coerce.number().int().min(1000).max(65535),
 	CLIENT_URL: clientUrlSchema,
+	MONGODB_URI: z.url({
+		error: "MONGODB_URI must be a valid MongoDB connection string",
+	}),
 });
 
 const envVars = {
 	PORT: process.env.PORT,
 	CLIENT_URL: process.env.CLIENT_URL,
+	MONGODB_URI: process.env.MONGODB_URI,
 };
 
 export const env = envSchema.parse(envVars);
