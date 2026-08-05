@@ -4,6 +4,7 @@ import express from "express";
 import corsOption from "./config/corsOption.js";
 import connectDb from "./config/db.js";
 import { env } from "./config/env.js";
+import rateLimiter from "./middlewares/rateLimiter.js";
 import healthRoute from "./routes/health.routes.js";
 
 // Initialize Express application
@@ -17,6 +18,7 @@ const port = env.PORT;
 
 // Security middlewares
 app.use(helmet());
+app.use(rateLimiter);
 
 // Enable response compression
 app.use(compression());
