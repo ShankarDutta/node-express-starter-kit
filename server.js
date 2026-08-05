@@ -4,6 +4,7 @@ import express from "express";
 import corsOption from "./config/corsOption.js";
 import connectDb from "./config/db.js";
 import { env } from "./config/env.js";
+import healthRoute from "./routes/health.routes.js";
 
 // Initialize Express application
 const app = express();
@@ -17,8 +18,10 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 app.use(cors(corsOption));
 
-// Start the server
+// Health check endpoint
+app.use("/api/v1/health", healthRoute);
 
+// Start the server
 const startServer = async () => {
 	try {
 		if (env.NODE_ENV !== "production") {
