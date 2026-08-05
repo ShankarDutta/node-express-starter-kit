@@ -9,10 +9,19 @@ import healthRoute from "./routes/health.routes.js";
 // Initialize Express application
 const app = express();
 
+// Hide Express signature
+app.disable("x-powered-by");
+
 // Define server port
 const port = env.PORT;
 
-// Middlewares
+// Security middlewares
+app.use(helmet());
+
+// Enable response compression
+app.use(compression());
+
+// Body parsers
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
