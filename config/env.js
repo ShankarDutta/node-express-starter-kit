@@ -5,9 +5,9 @@ import { z } from "zod";
 dotenv.config();
 
 const clientUrlSchema =
-	process.env.NODE_ENV === "production" ?
-		z.url({ protocol: /^https$/ }) // HTTPS only
-	:	z.url({ protocol: /^https?$/ }); // HTTP or HTTPS
+	process.env.NODE_ENV === "production"
+		? z.url({ protocol: /^https$/ }) // HTTPS only
+		: z.url({ protocol: /^https?$/ }); // HTTP or HTTPS
 
 const envSchema = z.object({
 	PORT: z.coerce.number().int().min(1000).max(65535),
