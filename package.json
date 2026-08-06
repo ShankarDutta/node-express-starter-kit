@@ -4,7 +4,9 @@
 	"description": "A production-ready Node.js and Express.js starter kit.",
 	"main": "server.js",
 	"scripts": {
-		"dev": "nodemon server.js"
+		"dev": "nodemon server.js",
+		"start": "node server.js",
+		"lint": "eslint ."
 	},
 	"repository": {
 		"type": "git",
@@ -44,5 +46,10 @@
 		"mongoose": "^9.9.1",
 		"nodemon": "^3.1.14",
 		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"eslint": "^10.8.0",
+		"globals": "^17.9.0"
 	}
 }

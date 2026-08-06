@@ -1,6 +1,8 @@
+import compression from "compression";
 import cors from "cors";
 import { setServers } from "dns/promises";
 import express from "express";
+import helmet from "helmet";
 import corsOption from "./config/corsOption.js";
 import connectDb from "./config/db.js";
 import { env } from "./config/env.js";
