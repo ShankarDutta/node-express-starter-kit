@@ -6,7 +6,9 @@
 	"scripts": {
 		"dev": "nodemon server.js",
 		"start": "node server.js",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"check": "npm run lint && prettier . --check",
+		"format": "prettier . --write"
 	},
 	"repository": {
 		"type": "git",
@@ -50,6 +52,7 @@
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"eslint": "^10.8.0",
-		"globals": "^17.9.0"
+		"globals": "^17.9.0",
+		"prettier": "^3.9.6"
 	}
 }
